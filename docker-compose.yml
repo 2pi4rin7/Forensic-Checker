@@ -1,0 +1,5 @@
+services:
+  forensics_checker:
+    build: .
+    ports:
+      - "1279:1279"
