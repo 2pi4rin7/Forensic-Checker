@@ -47,13 +47,17 @@ def checkInput():
     for i in range(len(QUESTIONS)):
         print(f"{QUESTIONS[i]}")
         user_input = input("==> ").strip()
-        if (user_input == "") or (user_input != ANSWERS[i]):
+        fflag = 0
+        for ans in ANSWERS[i]:
+           if user_input == ans:
+               fflag = 1
+               break
+        if fflag == 0:
             print(f"{RED}Wrong answer!{NORM}")
             print(f"Disconnected. Bye!")
             sys.exit(0)
             return False
-        else:
-            print(f"\n{GREEN}Correct!{NORM}\n")
+        print(f"{GREEN}Correct!{NORM}\n")
     return True
 
 def get_flag():
@@ -92,4 +96,5 @@ if __name__ == "__main__":
     else:
         os._exit(0)
         
+
             
